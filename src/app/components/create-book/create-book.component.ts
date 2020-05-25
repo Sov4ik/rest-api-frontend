@@ -14,7 +14,7 @@ export class CreateBookComponent implements OnInit {
   submitted = false;
 
   constructor(private bookService: BookService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
   }

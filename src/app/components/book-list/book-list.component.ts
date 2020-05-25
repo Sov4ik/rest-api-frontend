@@ -23,6 +23,7 @@ export class BookListComponent implements OnInit {
               private tokenStorageService: TokenStorageService) {}
 
   ngOnInit() {
+
      this.isLoggedIn = !!this.tokenStorageService.getToken();
 
      if (this.isLoggedIn) {
@@ -32,7 +33,7 @@ export class BookListComponent implements OnInit {
        this.showUpdateButton = this.roles.includes('ROLE_ADMIN') || this.roles.includes('ROLE_MODERATOR');
 
      }
-    this.reloadData();
+     this.reloadData();
   }
 
   reloadData() {
