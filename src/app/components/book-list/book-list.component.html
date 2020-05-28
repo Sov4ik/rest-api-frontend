@@ -1,6 +1,6 @@
 <div class="row">
 
-  <!--<div class="row">
+<!--  <div class="row">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books | async">
       <div class="card h-100">
         <a href="#">
@@ -49,7 +49,7 @@
 
                 <p>{{book.unitPrice | currency: 'INR'}}</p>
 
-                <a href="works-details.html">View more</a>
+                <a (click)="bookDetails(book.id)" >Details</a>
 
               </figcaption>
 
@@ -61,7 +61,7 @@
 
       </section>
 
-      <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
+      <!--<section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
 
         <ul class="grid-lod effect-2" id="grid">
 
@@ -77,7 +77,7 @@
 
                 <p>{{book.unitPrice | currency: 'INR'}}</p>
 
-                <a href="works-details.html">View more</a>
+                <a (click)="bookDetails(book.id)" >Details</a>
 
               </figcaption>
 
@@ -88,7 +88,7 @@
         </ul>
 
       </section>
-
+-->
       <div class="clearfix"></div>
 
     </div>

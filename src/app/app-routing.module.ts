@@ -8,6 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import {BookDetailsComponent} from "./components/book-details/book-details.component";
+import {UpdateBookComponent} from "./components/update-book/update-book.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +19,9 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'details', component: BookDetailsComponent },
+  { path: 'details/:id', component: BookDetailsComponent },
+  { path: 'update/:id', component: UpdateBookComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
