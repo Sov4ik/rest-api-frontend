@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.css']
 })
+
 export class BookDetailsComponent implements OnInit {
 
   id: number;

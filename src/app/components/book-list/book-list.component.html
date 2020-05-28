@@ -1,31 +1,6 @@
 <div class="row">
-  <h2>Book List</h2>
-</div>
-<!--    <table class="table table-striped">-->
-<!--      <thead>-->
-<!--      <tr>-->
-<!--        <th>Name</th>-->
-<!--        <th>Description</th>-->
-<!--        <th>Price</th>-->
-<!--        <th>Actions</th>-->
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      <tbody>-->
-<!--      <tr *ngFor="let book of books | async">-->
-<!--        <td>{{book.name}}</td>-->
-<!--        <td>{{book.description}}</td>-->
-<!--        <td>{{book.unitPrice}}</td>-->
-<!--        <td><button (click)="deleteBook(book.id)" class="btn btn-danger" *ngIf="showDeleteButton">Delete</button>-->
-<!--          <button (click)="updateBook(book.id)" class="btn btn-info" style="margin-left: 10px" *ngIf="showUpdateButton">Update</button>-->
-<!--          <button (click)="bookDetails(book.id)" class="btn btn-info" style="margin-left: 10px">Details</button>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
 
-<div class="col-lg-9">
-
-  <div class="row">
+  <!--<div class="row">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books | async">
       <div class="card h-100">
         <a href="#">
@@ -49,8 +24,75 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+
+
+  <main role="main-home-wrapper" class="container" *ngFor="let book of books | async">
+
+    <div class="row">
+
+      <div class="clearfix"></div>
+
+      <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
+
+        <ul class="grid-lod effect-2" id="grid">
+
+          <li>
+
+            <figure class="effect-oscar">
+
+              <img src="{{book.imageUrl}}" alt="" class="img-responsive"/>
+
+              <figcaption>
+
+                <h2>Studio Thonik <span>{{book.name}}</span></h2>
+
+                <p>{{book.unitPrice | currency: 'INR'}}</p>
+
+                <a href="works-details.html">View more</a>
+
+              </figcaption>
+
+            </figure>
+
+          </li>
+
+        </ul>
+
+      </section>
+
+      <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
+
+        <ul class="grid-lod effect-2" id="grid">
+
+          <li>
+
+            <figure class="effect-oscar">
+
+              <img src="{{book.imageUrl}}" alt="" class="img-responsive"/>
+
+              <figcaption>
+
+                <h2>Anatome Milano <span>{{book.name}}</span></h2>
+
+                <p>{{book.unitPrice | currency: 'INR'}}</p>
+
+                <a href="works-details.html">View more</a>
+
+              </figcaption>
+
+            </figure>
+
+          </li>
+
+        </ul>
+
+      </section>
+
+      <div class="clearfix"></div>
+
+    </div>
+
+  </main>
 
 </div>
-
-

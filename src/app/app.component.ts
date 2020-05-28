@@ -12,10 +12,12 @@ export class AppComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  title: Function;
 
   constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit() {
+
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -33,4 +35,5 @@ export class AppComponent implements OnInit {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
 }

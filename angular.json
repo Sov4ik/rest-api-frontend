@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular8": {
@@ -88,9 +88,27 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/css/style.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/effects/component.css",
+              "src/assets/css/effects/normalize.css",
+              "src/assets/css/effects/set2.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/effects/AnimOnScroll.js",
+              "src/assets/js/effects/classie.js",
+              "src/assets/js/effects/imagesloaded.js",
+              "src/assets/js/effects/masonry.pkgd.min.js",
+              "src/assets/js/effects/modernizr.custom.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/html5shiv.js",
+              "src/assets/js/nav.js",
+              "src/assets/js/jquery.contact.js",
+              "src/assets/js/jquery.min.js"
+            ]
           }
         },
         "lint": {
