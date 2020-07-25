@@ -14,7 +14,7 @@ export class BoardModeratorComponent implements OnInit {
   ngOnInit() {
     this.userService.getModeratorBoard().subscribe(
       data => {
-        this.content = data;
+        this.content = data.message;
       },
       err => {
         this.content = JSON.parse(err.error).message;

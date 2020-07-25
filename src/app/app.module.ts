@@ -14,6 +14,9 @@ import {BookDetailsComponent} from './components/book-details/book-details.compo
 import {ProfileComponent} from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import {BoardUserComponent} from "./board-user/board-user.component";
+import {BoardModeratorComponent} from "./board-moderator/board-moderator.component";
+import {BoardAdminComponent} from "./board-admin/board-admin.component";
 
 
 @NgModule({
@@ -26,7 +29,11 @@ import {RouterModule} from '@angular/router';
     ProfileComponent,
     BookDetailsComponent,
     CreateBookComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    BoardUserComponent,
+    BoardModeratorComponent,
+    BoardAdminComponent
+
   ],
     imports: [
         BrowserModule,
