@@ -33,11 +33,13 @@ export class BookListComponent implements OnInit {
        this.showUpdateButton = this.roles.includes('ROLE_ADMIN') || this.roles.includes('ROLE_MODERATOR');
 
      }
+
+    this.books = this.bookService.getBookList();
      this.reloadData();
   }
 
   reloadData() {
-    this.books = this.bookService.getBookList();
+
   }
 
   deleteBook(id: number) {

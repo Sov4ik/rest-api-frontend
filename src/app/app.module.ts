@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 import {BoardUserComponent} from "./board-user/board-user.component";
 import {BoardModeratorComponent} from "./board-moderator/board-moderator.component";
 import {BoardAdminComponent} from "./board-admin/board-admin.component";
+import {authInterceptorProviders} from "./_jwt/auth.interceptor";
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import {BoardAdminComponent} from "./board-admin/board-admin.component";
         AppRoutingModule,
         RouterModule
     ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

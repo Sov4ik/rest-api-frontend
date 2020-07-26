@@ -21,8 +21,7 @@ export class BookDetailsComponent implements OnInit {
   private roles: string[];
 
   constructor(private route: ActivatedRoute, private router: Router,
-              private bookService: BookService,
-              private tokenStorageService: TokenStorageService) { }
+              private bookService: BookService) { }
 
   ngOnInit() {
 
