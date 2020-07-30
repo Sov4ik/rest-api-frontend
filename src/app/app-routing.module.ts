@@ -11,19 +11,19 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import {BookDetailsComponent} from "./components/book-details/book-details.component";
 import {UpdateBookComponent} from "./components/update-book/update-book.component";
 import {CreateBookComponent} from "./components/create-book/create-book.component";
+import {ShopComponent} from "./shop/shop.component";
+import {BlogComponent} from "./blog/blog.component";
+import {ContactComponent} from "./contact/contact.component";
+import {BlogDetailsComponent} from "./blog-details/blog-details.component";
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'create', component: CreateBookComponent},
-  { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
-  { path: 'details', component: BookDetailsComponent },
-  { path: 'details/:id', component: BookDetailsComponent },
-  { path: 'update/:id', component: UpdateBookComponent},
+  { path: 'shop', component: ShopComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'blog-details', component: BlogDetailsComponent},
+  { path: '**', component: NotFoundComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

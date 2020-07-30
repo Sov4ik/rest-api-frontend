@@ -1,25 +1,101 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../_services/user.service';
+import {Component, OnInit} from '@angular/core';
+import $ from 'jquery';
+import {OwlOptions} from 'ngx-owl-carousel-o';
+import {Observable} from "rxjs";
+import {Book} from "../common/book";
+import {BookService} from "../_services/book.service";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-
 export class HomeComponent implements OnInit {
-  content: string;
 
-  constructor(private userService: UserService) { }
+  books: Observable<Book[]>;
 
-  ngOnInit() {
-    this.userService.getPublicContent().subscribe(
-      data => {
-        this.content = data;
+  customOptions: OwlOptions = {
+    loop: true,
+    margin: 0,
+    nav: false,
+    autoplay: false,
+    autoplayTimeout: 10000,
+    items: 1,
+    navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+    dots: false,
+    lazyLoad: true,
+    responsive: {
+      0: {
+        items: 1
       },
-      err => {
-        this.content = JSON.parse(err.error).message;
+      1920: {
+        items: 1
       }
-    );
+    }
+  };
+
+  customOptions2: OwlOptions = {
+    loop: true,
+    margin: 0,
+    nav: true,
+    autoplay: false,
+    autoplayTimeout: 10000,
+    items: 4,
+    navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+    dots: false,
+    lazyLoad: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      576: {
+        items: 2
+      },
+      768: {
+        items: 3
+      },
+      992: {
+        items: 4
+      },
+      1920: {
+        items: 4
+      }
+    }
+  };
+
+  customOptions3: OwlOptions = {
+    loop: true,
+    margin: 0,
+    nav: true,
+    autoplay: false,
+    autoplayTimeout: 10000,
+    items: 4,
+    navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+    dots: false,
+    lazyLoad: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      576: {
+        items: 2
+      },
+      768: {
+        items: 3
+      },
+      992: {
+        items: 4
+      },
+      1920: {
+        items: 4
+      }
+    }
+  };
+
+  constructor(private bookService: BookService) {}
+
+  ngOnInit(): void {
+    this.books = this.bookService.getBookList();
   }
+
 }

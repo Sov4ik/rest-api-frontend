@@ -18,6 +18,10 @@ import {BoardUserComponent} from "./board-user/board-user.component";
 import {BoardModeratorComponent} from "./board-moderator/board-moderator.component";
 import {BoardAdminComponent} from "./board-admin/board-admin.component";
 import {authInterceptorProviders} from "./_jwt/auth.interceptor";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CarouselModule} from "ngx-owl-carousel-o";
+import {OwlModule} from "ngx-owl-carousel";
+import {ContactComponent} from "./contact/contact.component";
 
 
 @NgModule({
@@ -33,7 +37,8 @@ import {authInterceptorProviders} from "./_jwt/auth.interceptor";
     UpdateBookComponent,
     BoardUserComponent,
     BoardModeratorComponent,
-    BoardAdminComponent
+    BoardAdminComponent,
+    ContactComponent
 
   ],
     imports: [
@@ -41,7 +46,10 @@ import {authInterceptorProviders} from "./_jwt/auth.interceptor";
         FormsModule,
         HttpClientModule,
         AppRoutingModule,
-        RouterModule
+        RouterModule,
+        OwlModule,
+        CarouselModule,
+        BrowserAnimationsModule,
     ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
