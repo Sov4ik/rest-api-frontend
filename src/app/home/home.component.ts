@@ -4,6 +4,7 @@ import {OwlOptions} from 'ngx-owl-carousel-o';
 import {Observable} from "rxjs";
 import {Book} from "../common/book";
 import {BookService} from "../_services/book.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -92,10 +93,15 @@ export class HomeComponent implements OnInit {
     }
   };
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.books = this.bookService.getBookList();
+  }
+
+  bookDetails(id: number){
+    this.router.navigate(['details', id]);
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {Book} from "../common/book";
+import {BookService} from "../_services/book.service";
 
 @Component({
   selector: 'app-blog',
