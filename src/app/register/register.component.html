@@ -1,86 +1,68 @@
-<div class="col-md-12">
-  <div class="card card-container">
-    <img
-      id="profile-img"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card"
-    />
-    <form
-      *ngIf="!isSuccessful"
-      name="form"
-      (ngSubmit)="f.form.valid && onSubmit()"
-      #f="ngForm"
-      novalidate
-    >
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          class="form-control"
-          name="username"
-          [(ngModel)]="form.username"
-          required
-          minlength="3"
-          maxlength="20"
-          #username="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
-          <div *ngIf="username.errors.minlength">
-            Username must be at least 3 characters
-          </div>
-          <div *ngIf="username.errors.maxlength">
-            Username must be at most 20 characters
+<div>
+  <!-- Start Bradcaump area -->
+  <div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bradcaump__inner text-center">
+            <h2 class="bradcaump-title">My Account</h2>
+            <nav class="bradcaump-content">
+              <a class="breadcrumb_item" href="index.html">Home</a>
+              <span class="brd-separetor">/</span>
+              <span class="breadcrumb_item active">My Account</span>
+            </nav>
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          name="email"
-          [(ngModel)]="form.email"
-          required
-          email
-          #email="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">
-            Email must be a valid email address
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
-          required
-          minlength="6"
-          #password="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">
-            Password must be at least 6 characters
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block">Sign Up</button>
-      </div>
-
-      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-        Signup failed!<br />{{ errorMessage }}
-      </div>
-    </form>
-
-    <div class="alert alert-success" *ngIf="isSuccessful">
-      Your registration is successful!
     </div>
   </div>
+  <!-- End Bradcaump area -->
+  <!-- Start My Account Area -->
+  <section class="my_account_area pt--80 pb--55 bg--white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-12">
+          <div class="my__account__wrapper">
+            <h3 class="account__title">Register</h3>
+            <form
+                  name="form"
+                  (ngSubmit)="f.form.valid && onSubmit()"
+                  #f="ngForm"
+                  novalidate>
+              <div class="account__form">
+                <div class="input__box">
+                  <label>Username <span>*</span></label>
+                  <input type="text" name="username"
+                         [(ngModel)]="form.username"
+                         required
+                         #username="ngModel"
+                  >
+                </div>
+                <div class="input__box">
+                  <label>Email address <span>*</span></label>
+                  <input type="email" name="email"
+                         [(ngModel)]="form.email"
+                         required
+                         minlength="6"
+                         #email="ngModel">
+                </div>
+                <div class="input__box">
+                  <label>Password<span>*</span></label>
+                  <input type="password" name="password"
+                         [(ngModel)]="form.password"
+                         required
+                         #password="ngModel">
+                </div>
+                <div class="form__btn">
+                  <button>Register</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End My Account Area -->
+
 </div>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from './_services/token-storage.service';
 import $ from 'jquery';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,8 @@ export class AppComponent implements OnInit {
     settingItem.toggleClass('is-visible');
   }
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(private tokenStorageService: TokenStorageService,
+              private router: Router) { }
 
   ngOnInit() {
 
@@ -52,7 +54,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    this.router.navigate(['home']);
   }
 
 }
