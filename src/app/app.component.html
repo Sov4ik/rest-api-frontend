@@ -252,16 +252,17 @@
                   </div>
                   <div class="switcher-currency">
                     <strong class="label switcher-label">
-                      <span>My Account</span>
+                      <span><a href="#" *ngIf="isLoggedIn" >Hello {{username}}</a></span>
+                      <span><a href="/login" *ngIf="!isLoggedIn" routerLink="/login">My Account</a></span>
                     </strong>
                     <div class="switcher-options">
                       <div class="switcher-currency-trigger">
                         <div class="setting__menu">
                           <span><a href="#">Compare Product</a></span>
-                          <span><a href="#">My Account</a></span>
                           <span><a href="#">My Wishlist</a></span>
-                          <span><a href="#">Sign In</a></span>
-                          <span><a href="#">Create An Account</a></span>
+                          <span><a href="/login"  *ngIf="!isLoggedIn" routerLink="/login">Sign In</a></span>
+                          <span><a href="/register"  *ngIf="!isLoggedIn" routerLink="/register">Create An Account</a></span>
+                          <span><a href="/loguot"  *ngIf="isLoggedIn" (click)="logout()">Logout</a></span>
                         </div>
                       </div>
                     </div>
