@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from './_services/token-storage.service';
+import $ from 'jquery';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,26 @@ export class AppComponent implements OnInit {
   username: string;
   title: Function;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  cartboxToggler(event: any) {
+    event.preventDefault();
+    const  container = $('.block-minicart');
+    container.toggleClass('is-visible');
+  }
+
+  searchToggler(event: any) {
+    event.preventDefault();
+    const container = $('.search_active');
+    container.toggleClass('is-visible');
+  }
+
+  settingOption(event: any) {
+    event.preventDefault();
+    const settingItem = $('.setting__block');
+    settingItem.toggleClass('is-visible');
+  }
+
+  constructor(private tokenStorageService: TokenStorageService,
+              private router: Router) { }
 
   ngOnInit() {
 
@@ -33,7 +54,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    this.router.navigate(['home']);
   }
 
 }
